@@ -1,10 +1,11 @@
 {
-  "name": "aws-xray-sdk-express",
+  "name": "@nesto/aws-xray-sdk-express",
   "version": "1.3.0",
   "description": "AWS X-Ray Middleware for Express (Javascript)",
   "author": "Amazon Web Services",
   "contributors": [
-    "Sandra McMullen <mcmuls@amazon.com>"
+    "Sandra McMullen <mcmuls@amazon.com>",
+    "Martin Loeper <martin.loeper@nesto-software.de>"
   ],
   "main": "lib/index.js",
   "engines": {
@@ -14,10 +15,10 @@
     "test": "test"
   },
   "peerDependencies": {
-    "aws-xray-sdk-core": "^1.3.0"
+    "@nesto/aws-xray-sdk-core": "^1.3.0"
   },
   "devDependencies": {
-    "aws-xray-sdk-core": "^1.3.0",
+    "@nesto/aws-xray-sdk-core": "^1.3.0",
     "chai": "^3.5.0",
     "eslint": "^3.10.2",
     "grunt": "^1.0.1",
