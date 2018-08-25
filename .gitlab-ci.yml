@@ -7,6 +7,11 @@ npm-publish:
   script:
     - npm install -g npm-cli-login
     - npm-cli-login -u $NPM_USER -p $NPM_PASS -e $NPM_EMAIL --config-path ~/.npmrc
-    - npm publish --registry=https://verdaccio.nesto-software.de/ --tag $CI_COMMIT_SHA || echo "You must use - npm version patch - if you encounter versioning issues."; exit 1;
+    - CORE_PKG_PATH="$(pwd)/packages/core"
+    - EXPRESS_PKG_PATH="$(pwd)/packages/express"
+    - FULL_SDK_PKG_PATH="$(pwd)/packages/full_sdk"
+    - cd $CORE_PKG_PATH && npm publish --registry=https://verdaccio.nesto-software.de/ --tag $CI_COMMIT_SHA || echo "You must use - npm version patch - if you encounter versioning issues."; exit 1;
+    - cd $EXPRESS_PKG_PATH && npm publish --registry=https://verdaccio.nesto-software.de/ --tag $CI_COMMIT_SHA || echo "You must use - npm version patch - if you encounter versioning issues."; exit 1;
+    - cd $FULL_SDK_PKG_PATH && npm publish --registry=https://verdaccio.nesto-software.de/ --tag $CI_COMMIT_SHA || echo "You must use - npm version patch - if you encounter versioning issues."; exit 1;
   only:
     - master
