@@ -2,10 +2,10 @@ stages:
   - deploy
 
 npm-publish:
-  image: node:latest
+  image: node:8
   stage: deploy
   script:
-    - npm install -g npm-cli-login
+    - npm install -g npm-cli-login@0.0.10
     - npm-cli-login -u $NPM_USER -p $NPM_PASS -e $NPM_EMAIL --config-path ~/.npmrc
     - CORE_PKG_PATH="$(pwd)/packages/core"
     - EXPRESS_PKG_PATH="$(pwd)/packages/express"
